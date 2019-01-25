@@ -1,13 +1,12 @@
 (ns exercises.rna)
+         
+(defn- dna->rna [nucleotide]
+  (case nucleotide
+    \C \G
+    \G \C
+    \A \U
+    \T \A
+    (throw (AssertionError. "Invalid nucleotide"))))
 
-(def dna->rna {\G \C
-               \C \G
-               \T \A
-               \A \U})
-
-(defn to-rna
-  [dna]
-  (apply str (map (fn [x]
-                    (assert (contains? dna->rna x))
-                    (get dna->rna x))
-                  dna)))
+(defn to-rna [dna]
+  (apply str (map dna->rna dna)))
