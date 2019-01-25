@@ -1,6 +1,6 @@
 (ns exercises.rna)
          
-(defn- dna->rna [nucleotide]
+(defn dna->rna [nucleotide]
   (case nucleotide
     \C \G
     \G \C
