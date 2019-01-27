@@ -9,4 +9,6 @@
     (throw (AssertionError. "Invalid nucleotide"))))
 
 (defn to-rna [dna]
-  (apply str (map dna->rna dna)))
+  (->> dna 
+       (map dna->rna) 
+       (apply str)))
