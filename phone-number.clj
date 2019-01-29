@@ -19,8 +19,10 @@
 
 (defn pretty-print
   [num-string]
-  (str "(" (area-code num-string) ")"
-       " "
-       (subs (number num-string) 3 6)
-       "-"
-       (subs (number num-string) 6 10)))
+  (let [num-cleaned (number num-string)]
+    (str "(" 
+         (subs num-cleaned 0 3)
+         ") "
+         (subs num-cleaned 3 6)
+         "-"
+         (subs num-cleaned 6 10))))
