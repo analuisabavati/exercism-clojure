@@ -26,6 +26,6 @@
     
     (sure-phareses phrase)
     "Sure."
-    
-   	(clojure.string/blank? phrase)
+
+    (clojure.string/blank? phrase)
     "Fine. Be that way!"))))
