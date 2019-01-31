@@ -2,7 +2,8 @@
 
 (defn leap-year?
   [year]
-  (cond (zero? (mod year 400)) true
-        (zero? (mod year 100)) false
-        (zero? (mod year 4)) true
-        :else false))
+  (cond 
+    (-> year (mod 400) zero?) true
+    (-> year (mod 100) zero?) false
+    (-> year (mod 4) zero?) true
+    :else false))
