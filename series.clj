@@ -3,4 +3,6 @@
 (defn slices [string-of-digits length]
   (if (<= length 0)
     [""]
-    (map clojure.string/join (partition length 1 string-of-digits))))
+    (->> string-of-digits
+         (partition length 1)
+         (map clojure.string/join)))))
