@@ -3,7 +3,7 @@
 (defn collatz [n]
   (loop [steps 0 new-n n]
     (cond
-      (or (> 0 new-n) (= 0 new-n))
+      (>= 0 new-n)
       (throw (IllegalArgumentException.))
      
       (= 1 new-n) 
